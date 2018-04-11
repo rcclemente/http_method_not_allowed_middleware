@@ -1,5 +1,10 @@
 Send 405 response for ActionController::UnknownHttpMethod exceptions
 
+Travis CI
+=======
+[![Build Status](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware.png)](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware)
+
+
 Install
 =======
 
@@ -19,4 +24,3 @@ Author
 [Ryan Clemente](https://github.com/rcclemente)<br/>
 kojiee@gmail.com<br/>
 License: MIT<br/>
-[![Build Status](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware.png)](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware)
