@@ -1,10 +1,10 @@
-GEM_DESCRIPTION
+Send 405 response for ActionController::UnknownHttpMethod exceptions
 
 Install
 =======
 
 ```Bash
-gem install GEM_NAME
+gem install http_method_not_allowed_middleware
 ```
 
 Usage
@@ -16,7 +16,7 @@ CODE EXAMPLE
 
 Author
 ======
-Ryan Clemente<br/>
+[Ryan Clemente](https://github.com/rcclemente)<br/>
 kojiee@gmail.com<br/>
 License: MIT<br/>
-[![Build Status](https://travis-ci.org/AUTHOR_GITHUB/GEM_NAME.png)](https://travis-ci.org/AUTHOR_GITHUB/GEM_NAME)
+[![Build Status](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware.png)](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware)

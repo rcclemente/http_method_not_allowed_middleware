@@ -1,4 +1,4 @@
 # frozen_string_literal: true
-module GEM_CLASS_NAME
+module HttpMethodNotAllowedMiddleware
   VERSION = "0.0.0"
 end

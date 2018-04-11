@@ -6,5 +6,5 @@ SingleCov.setup :minitest
 
 require "maxitest/autorun"
 
-require "GEM_NAME/version"
-require "GEM_NAME"
+require "http_method_not_allowed_middleware/version"
+require "http_method_not_allowed_middleware"
