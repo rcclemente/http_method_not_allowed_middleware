@@ -5,7 +5,7 @@ require "#{name.tr("-", "/")}/version"
 
 Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.summary = "Send 405 response for ActionController::UnknownHttpMethod exceptions"
-  s.authors = ["Ryan Clemente"i, "Adrian Bordinc"]
+  s.authors = ["Ryan Clemente", "Adrian Bordinc"]
   s.email = ["kojiee@gmail.com", "adrian.bordinc@gmail.com"]
   s.homepage = "https://github.com/rcclemente/#{name}"
   s.files = `git ls-files lib/ bin/ MIT-LICENSE`.split("\n")

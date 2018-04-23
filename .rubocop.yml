@@ -3,6 +3,7 @@ AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - 'bundle_all'
+    - 'vendor/**/*'
 
 Style/StringLiterals:
   Enabled: false
