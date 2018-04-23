@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+gemspec path: '..'
+
+gem 'actionpack', '~> 5.0.2'
+
+eval_gemfile 'common.rb'

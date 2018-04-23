@@ -4,7 +4,7 @@ require_relative "test_helper"
 SingleCov.covered!
 
 describe HttpMethodNotAllowedMiddleware do
-  describe Middleware do
+  describe 'middleware' do
     before do
       @app    = proc { |_env| [200, {}, []] }
       @router = HttpMethodNotAllowedMiddleware.new(@app)
@@ -28,6 +28,6 @@ describe HttpMethodNotAllowedMiddleware do
   end
 
   it "has a VERSION" do
-    HttpMethodNotAllowedMiddleware::VERSION.must_match /^[\.\da-z]+$/
+    HttpMethodNotAllowed::VERSION.must_match /^[\.\da-z]+$/
   end
 end

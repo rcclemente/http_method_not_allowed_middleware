@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     http_method_not_allowed_middleware (0.0.0)
 
