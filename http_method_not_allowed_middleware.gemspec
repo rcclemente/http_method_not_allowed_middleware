@@ -22,8 +22,8 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.add_development_dependency "maxitest"
   s.add_development_dependency "mocha", ">= 0.14.0"
   s.add_development_dependency 'private_gem'
-  s.add_development_dependency 'rubocop'
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rubocop'
   s.add_development_dependency 'single_cov'
   s.add_development_dependency 'wwtd'
 end

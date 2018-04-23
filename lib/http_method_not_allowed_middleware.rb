@@ -3,16 +3,19 @@ require "action_dispatch"
 require "logger"
 
 class HttpMethodNotAllowedMiddleware
-  def initialize(app, opts={})
+  RACK_LOGGER = 'rack.logger'
+
+  def initialize(app, opts = {})
     @app = app
-		@logger = @logger_proc = nil
-		if logger = opts[:logger]
-			if logger.respond_to? :call
-				@logger_proc = opts[:logger]
-			else
-				@logger = logger
-			end
-		end
+    @debug = opts[:debug]
+    @logger = @logger_proc = nil
+    if opts[:logger]
+      if opts[:logger].respond_to? :call
+        @logger_proc = opts[:logger]
+      else
+        @logger = opts[:logger]
+      end
+    end
   end
 
   # Gracefully return 405 if we get a request with an unsupported HTTP method
@@ -26,28 +29,26 @@ class HttpMethodNotAllowedMiddleware
   end
 
   def debug?
-    @debug_mode
+    @debug ||= false
   end
 
   protected
-    def debug(env, message = nil, &block)
-      (@logger || select_logger(env)).debug(message, &block) if debug?
+
+  def debug(env, message = nil)
+    (@logger || select_logger(env)).debug(message) if debug?
+  end
+
+  def select_logger(env)
+    @logger = if @logger_proc
+      logger_proc = @logger_proc
+      @logger_proc = nil
+      logger_proc.call
+    elsif defined?(Rails) && Rails.respond_to?(:logger) && Rails.logger
+      Rails.logger
+    elsif env[RACK_LOGGER]
+      env[RACK_LOGGER]
+    else
+      ::Logger.new(STDOUT).tap { |logger| logger.level = ::Logger::Severity::DEBUG }
     end
-
-    def select_logger(env)
-      @logger = if @logger_proc
-        logger_proc = @logger_proc
-        @logger_proc = nil
-        logger_proc.call
-
-      elsif defined?(Rails) && Rails.respond_to?(:logger) && Rails.logger
-        Rails.logger
-
-      elsif env[RACK_LOGGER]
-        env[RACK_LOGGER]
-
-      else
-        ::Logger.new(STDOUT).tap { |logger| logger.level = ::Logger::Severity::DEBUG }
-      end
-    end
+  end
 end
