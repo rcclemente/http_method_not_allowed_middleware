@@ -4,6 +4,11 @@ require_relative "test_helper"
 SingleCov.covered!
 
 describe HttpMethodNotAllowedMiddleware do
+
+  it "has a VERSION" do
+    HttpMethodNotAllowedMiddleware::VERSION.must_match /^[\.\da-z]+$/
+  end
+
   describe 'middleware' do
     before do
       @app    = proc { |_env| [200, {}, []] }
@@ -23,11 +28,32 @@ describe HttpMethodNotAllowedMiddleware do
       ActionDispatch::Request::HTTP_METHODS.each do |method|
         @env['REQUEST_METHOD'] = method
         assert_equal 200, @router.call(@env)[0]
+        puts "router = #{@router.call(@env)}"
       end
     end
   end
 
-  it "has a VERSION" do
-    HttpMethodNotAllowed::VERSION.must_match /^[\.\da-z]+$/
-  end
+	describe 'logging' do
+		it 'should not log debug messages if debug option is false' do
+      app = mock
+      app.stubs(:call).returns(200, {}, [])
+
+      logger = mock
+      logger.expects(:debug).never
+
+      http = HttpMethodNotAllowedMiddleware.new(app, :debug => false, :logger => logger)
+      http.send(:debug, {}, 'testing')
+    end
+
+    it 'should log debug messages if debug option is true' do
+      app = mock
+      app.stubs(:call).returns(200, {}, [])
+
+      logger = mock
+      logger.expects(:debug)
+
+      http = HttpMethodNotAllowedMiddleware.new(app, :debug => true, :logger => logger)
+      http.send(:debug, {}, 'testing')
+    end
+	end
 end
