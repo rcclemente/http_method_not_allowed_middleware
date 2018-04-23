@@ -19,8 +19,11 @@ Usage
 CODE EXAMPLE
 ```
 
-Author
+Authors
 ======
 [Ryan Clemente](https://github.com/rcclemente)<br/>
 kojiee@gmail.com<br/>
+
+[Adrian Bordinc](https://github.com/ellimist)<br/>
+adrian.bordinc@gmail.com<br/>
 License: MIT<br/>
