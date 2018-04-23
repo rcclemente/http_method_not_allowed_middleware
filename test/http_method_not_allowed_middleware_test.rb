@@ -40,14 +40,14 @@ describe HttpMethodNotAllowedMiddleware do
       @app.stubs(:call).returns(response)
     end
 
-    it 'should not log debug messages if debug option is false' do
+    it 'does not log debug messages if debug option is false' do
       logger.expects(:debug).never
 
       http = HttpMethodNotAllowedMiddleware.new(@app, debug: false, logger: logger)
       http.send(:debug, {}, 'testing')
     end
 
-    it 'should log debug messages if debug option is true' do
+    it 'logs debug messages if debug option is true' do
       logger.expects(:debug)
 
       http = HttpMethodNotAllowedMiddleware.new(@app, debug: true, logger: logger)
@@ -56,7 +56,7 @@ describe HttpMethodNotAllowedMiddleware do
 
     let(:env) { Rack::MockRequest.env_for('/') }
 
-    it 'should use rack.logger if available' do
+    it 'uses rack.logger if available' do
       logger.expects(:debug).at_least_once
 
       env['REQUEST_METHOD'] = 'NO WAY'

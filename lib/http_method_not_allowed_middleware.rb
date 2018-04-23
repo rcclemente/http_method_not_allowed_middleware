@@ -8,14 +8,10 @@ class HttpMethodNotAllowedMiddleware
   def initialize(app, opts = {})
     @app = app
     @debug = opts[:debug]
+
     @logger = @logger_proc = nil
-    if opts[:logger]
-      if opts[:logger].respond_to? :call
-        @logger_proc = opts[:logger]
-      else
-        @logger = opts[:logger]
-      end
-    end
+    @logger_proc = opts[:logger] if opts[:logger]&.respond_to?(:call)
+    @logger = opts[:logger] if opts[:logger] && @logger_proc.nil?
   end
 
   # Gracefully return 405 if we get a request with an unsupported HTTP method
