@@ -11,7 +11,6 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.files = `git ls-files lib/ bin/ MIT-LICENSE`.split("\n")
   s.license = "MIT"
   s.require_paths = ['app/models', 'lib']
-
   s.required_ruby_version = ">= 2.3.0"
 
   s.add_development_dependency 'rack'
@@ -26,5 +25,4 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'single_cov'
   s.add_development_dependency 'wwtd'
- s.required_ruby_version = ">= 2.3.0"
 end
