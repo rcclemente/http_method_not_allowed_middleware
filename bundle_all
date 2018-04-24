@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-gemfiles = ['Gemfile'] + Dir['gemfiles/*.gemfile']
-gemfiles.each_with_index do |gemfile, i|
-  gemfile_env = "BUNDLE_GEMFILE=#{gemfile} " if i != 0
-  cmd = "#{gemfile_env}bundle #{ARGV.join(" ")} "
-  puts cmd
-  abort "FAILED" unless system(cmd)
-end

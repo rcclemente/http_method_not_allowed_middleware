@@ -90,7 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (~> 3.2.22.5)
+  actionpack (>= 3.2.0, < 4.0.0)
   bump
   byebug
   http_method_not_allowed_middleware!

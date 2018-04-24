@@ -16,7 +16,7 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.add_development_dependency 'rack'
   s.add_development_dependency 'rake'
 
-  s.add_development_dependency 'actionpack'
+  s.add_development_dependency 'actionpack', '>= 3.2.0', '< 4.0.0'
   s.add_development_dependency 'bump'
   s.add_development_dependency 'byebug'
   s.add_development_dependency "maxitest"
