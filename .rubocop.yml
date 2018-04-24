@@ -2,7 +2,6 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.3
   Exclude:
-    - 'bundle_all'
     - 'vendor/**/*'
 
 Style/StringLiterals:
