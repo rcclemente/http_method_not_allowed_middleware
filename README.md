@@ -16,7 +16,10 @@ Usage
 =====
 
 ```Ruby
-CODE EXAMPLE
+require 'http_method_not_allowed_middleware'
+Rails.application.config.middleware.instance_eval do
+  insert_before(0, HttpMethodNotAllowedMiddleware)
+end
 ```
 
 Authors
