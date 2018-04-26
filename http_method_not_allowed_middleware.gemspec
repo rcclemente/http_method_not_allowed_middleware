@@ -13,15 +13,15 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.require_paths = ['app/models', 'lib']
   s.required_ruby_version = ">= 2.3.0"
 
-  s.add_development_dependency 'rack'
-  s.add_development_dependency 'rake'
+  s.add_dependency 'actionpack', '>= 3.2.0', '< 4.0.0'
+  s.add_dependency 'rack'
 
-  s.add_development_dependency 'actionpack', '>= 3.2.0', '< 4.0.0'
   s.add_development_dependency 'bump'
   s.add_development_dependency 'byebug'
   s.add_development_dependency "maxitest"
   s.add_development_dependency "mocha", ">= 0.14.0"
   s.add_development_dependency 'private_gem'
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'single_cov'

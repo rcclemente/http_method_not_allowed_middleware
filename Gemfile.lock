@@ -1,7 +1,9 @@
 PATH
   remote: .
   specs:
-    http_method_not_allowed_middleware (0.0.0)
+    http_method_not_allowed_middleware (0.1.0)
+      actionpack (>= 3.2.0, < 4.0.0)
+      rack
 
 GEM
   remote: https://rubygems.org/
@@ -90,14 +92,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (>= 3.2.0, < 4.0.0)
   bump
   byebug
   http_method_not_allowed_middleware!
   maxitest
   mocha (>= 0.14.0)
   private_gem
-  rack
   rake
   rspec
   rubocop
