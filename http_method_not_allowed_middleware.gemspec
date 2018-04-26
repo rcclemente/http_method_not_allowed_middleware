@@ -20,7 +20,6 @@ Gem::Specification.new name, HttpMethodNotAllowedMiddleware::VERSION do |s|
   s.add_development_dependency 'byebug'
   s.add_development_dependency "maxitest"
   s.add_development_dependency "mocha", ">= 0.14.0"
-  s.add_development_dependency 'private_gem'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop'
