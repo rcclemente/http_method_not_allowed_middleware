@@ -3,9 +3,9 @@ sudo: false
 cache: bundler
 branches:
   only: master
-install:
+before_install:
+  - gem update --system
   - gem install bundler
-  - bundle install
 script: bundle exec rake $TASK
 env:
 - TASK=test
