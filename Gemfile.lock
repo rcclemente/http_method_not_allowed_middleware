@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    http_method_not_allowed_middleware (0.2.0)
+    http_method_not_allowed_middleware (0.2.1)
       actionpack (>= 3.2.0, < 4.0.0)
       rack
 
