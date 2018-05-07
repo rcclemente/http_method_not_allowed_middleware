@@ -5,6 +5,7 @@ branches:
   only: master
 install:
   - gem install bundler
+  - bundle install
 script: bundle exec rake $TASK
 env:
 - TASK=test
