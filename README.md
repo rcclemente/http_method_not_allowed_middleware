@@ -30,3 +30,7 @@ kojiee@gmail.com<br/>
 [Adrian Bordinc](https://github.com/ellimist)<br/>
 adrian.bordinc@gmail.com<br/>
 License: MIT<br/>
+
+Gem Template
+======
+https://github.com/grosser/project_template
