@@ -39,4 +39,4 @@ jobs:
       run: bundle exec rake test
 
     - name: Rubocop checks
-      uses: bundle exec rake rubocop
+      run: bundle exec rake rubocop
