@@ -2,7 +2,7 @@ Send 405 response for ActionController::UnknownHttpMethod exceptions
 
 Travis CI
 =======
-[![Build Status](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware.png)](https://travis-ci.org/rcclemente/http_method_not_allowed_middleware)
+[![Build Status](https://github.com/rcclemente/http_method_not_allowed_middleware/workflows/Ruby/badge.svg)](https://github.com/rcclemente/http_method_not_allowed_middleware/actions)
 [![Gem Version](https://badge.fury.io/rb/http_method_not_allowed_middleware.svg)](https://badge.fury.io/rb/http_method_not_allowed_middleware)
 
 Install
